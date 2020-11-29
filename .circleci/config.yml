@@ -21,6 +21,7 @@ workflows:
   hello_world:
     jobs:
       - print_hello
+      - print_world
 
   # Name the workflow "welcome"
   welcome:
