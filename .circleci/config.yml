@@ -22,8 +22,8 @@ workflows:
     jobs:
       - print_hello
       - print_world:
-        requires:
-          - print_hello
+          requires:
+            - print_hello
 
   # Name the workflow "welcome"
   welcome:
