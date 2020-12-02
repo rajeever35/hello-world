@@ -2,19 +2,19 @@
 version: 2.1
 commands:
   print_pipeline_id:
-    params:
+    parameters:
       to:
         type: string
         default: hello world
     steps:
-      - run: echo << params.to >>
+      - run: echo << parameters.to >>
 
 jobs:
   newjob:
     docker:
       - image: circleci/node:13.8.0
     steps:
-      - print_pipeline_id
+      - print_pipeline_id:
           to : $CIRCLE_WORKFLOW_ID
 
 workflows:
