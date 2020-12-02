@@ -1,0 +1,9 @@
+version: 2.1
+jobs:
+  job_fail:
+    docker:
+      - image: circleci/node:13.8.0
+    steps:
+      - bash: return 1
+      - run: echo "Hello Error!" 
+          when: on_fail
