@@ -2,6 +2,7 @@
 version: 2.1
 commands:
   print_pipeline_id:
+  # same work can be done if parameters section get deleted i.e line 6 to 9 and 19.
     parameters:
       to:
         type: string
