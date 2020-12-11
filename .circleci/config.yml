@@ -8,7 +8,8 @@ jobs:
       - run:
           name: smoke test
           command: |
-            if curl -s --head "blog.udacity.com" # test if blog.udacity. com exists
+            URL="https://blog.udacity.com/"
+            if curl -s --head ${URL} # test if blog.udacity. com exists
             then
               return 0
             else
@@ -17,6 +18,4 @@ jobs:
 workflows:
   my_workflow:
     jobs:
-      - smoke_test:
-          requires:
-            - configure_infrastructure
+      - smoke_test
