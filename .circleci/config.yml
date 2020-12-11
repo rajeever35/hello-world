@@ -1,0 +1,20 @@
+version 2.1
+jobs:
+  smoke_test:
+    docker:
+      - image: alpine:latest
+    steps:
+      - run: apk add --update curl
+      - run:
+          name: smoke test
+          command: |
+            if curl -s --head "blog.udacity.com" # test if blog.udacity. com exists
+            then
+              return 0
+            else
+              return 1
+            fi            
+workflows:
+  my_workflow:
+    jobs:
+      - smoke_test:
